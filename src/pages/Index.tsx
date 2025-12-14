@@ -1,13 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import FeaturedPhones from '@/components/FeaturedPhones';
+import TrustSection from '@/components/TrustSection';
+import StoreLocation from '@/components/StoreLocation';
+import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
+  useEffect(() => {
+    // Update page title for SEO
+    document.title = "Globalworld Mobile - Jaipur's Most Trusted Mobile Store | iPhone & Android";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background overflow-x-hidden">
+      <Header />
+      <Hero />
+      <WhyChooseUs />
+      <FeaturedPhones />
+      <TrustSection />
+      <StoreLocation />
+      <Footer />
+      <WhatsAppButton />
+    </main>
   );
 };
 
