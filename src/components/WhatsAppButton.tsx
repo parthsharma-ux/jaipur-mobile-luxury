@@ -11,28 +11,30 @@ const WhatsAppButton = () => {
       onClick={openWhatsApp}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 1, duration: 0.5, type: "spring" }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center group"
+      transition={{ delay: 1.5, duration: 0.6, type: "spring", stiffness: 200 }}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      className="fixed bottom-8 right-8 z-50 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center group"
       style={{
-        boxShadow: '0 4px 20px rgba(37, 211, 102, 0.4)',
+        background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+        boxShadow: '0 8px 32px rgba(37, 211, 102, 0.35)',
       }}
       aria-label="Chat on WhatsApp"
     >
-      <MessageCircle className="w-7 h-7" />
+      <MessageCircle className="w-7 h-7 text-white" />
       
-      {/* Pulse effect */}
-      <span className="absolute w-full h-full rounded-full bg-green-500 animate-ping opacity-30" />
+      {/* Pulse rings */}
+      <span className="absolute w-full h-full rounded-full bg-green-500/40 animate-ping" style={{ animationDuration: '2s' }} />
+      <span className="absolute w-full h-full rounded-full border-2 border-green-400/30 animate-pulse" />
       
       {/* Tooltip */}
-      <motion.span
-        initial={{ opacity: 0, x: 20 }}
-        whileHover={{ opacity: 1, x: 0 }}
-        className="absolute right-20 bg-card text-foreground px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap shadow-lg border border-border"
+      <motion.div
+        initial={{ opacity: 0, x: 20, scale: 0.9 }}
+        whileHover={{ opacity: 1, x: 0, scale: 1 }}
+        className="absolute right-20 glass-card px-4 py-2.5 whitespace-nowrap pointer-events-none"
       >
-        Chat with us!
-      </motion.span>
+        <span className="text-sm font-medium text-foreground">Chat with us</span>
+      </motion.div>
     </motion.button>
   );
 };

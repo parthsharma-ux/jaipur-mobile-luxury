@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, MessageCircle, Shield, CreditCard, Award } from 'lucide-react';
+import { MapPin, MessageCircle, Shield, CreditCard, Award, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const openWhatsApp = () => {
@@ -11,56 +11,65 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background effects */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+      {/* Premium background effects */}
       <div className="absolute inset-0 bg-hero-glow" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-champagne/3 rounded-full blur-[100px]" />
       
-      {/* Floating phones */}
+      {/* Floating phones - Left */}
       <motion.div 
-        className="absolute left-[5%] top-[20%] hidden lg:block"
-        animate={{ y: [0, -20, 0], rotate: [-5, 0, -5] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[8%] top-[25%] hidden xl:block"
+        animate={{ y: [0, -25, 0], rotate: [-8, -5, -8] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="w-48 h-96 bg-gradient-to-b from-secondary to-card rounded-[3rem] border border-glass-border shadow-2xl flex items-center justify-center">
-          <div className="w-40 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-[2.5rem]" />
+        <div className="relative">
+          <div className="w-52 h-[420px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-[3.5rem] border border-white/10 shadow-2xl flex items-center justify-center p-3">
+            <div className="w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-champagne/10 rounded-[3rem] border border-white/5" />
+          </div>
+          <div className="absolute -inset-4 bg-gradient-radial from-primary/10 to-transparent blur-2xl -z-10" />
         </div>
       </motion.div>
 
+      {/* Floating phones - Right */}
       <motion.div 
-        className="absolute right-[5%] top-[25%] hidden lg:block"
-        animate={{ y: [0, -25, 0], rotate: [5, 0, 5] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute right-[8%] top-[30%] hidden xl:block"
+        animate={{ y: [0, -20, 0], rotate: [8, 5, 8] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
-        <div className="w-44 h-88 bg-gradient-to-b from-card to-secondary rounded-[3rem] border border-glass-border shadow-2xl flex items-center justify-center">
-          <div className="w-36 h-72 bg-gradient-to-br from-accent/20 to-primary/20 rounded-[2.5rem]" />
+        <div className="relative">
+          <div className="w-48 h-[400px] bg-gradient-to-b from-[#2a2a2a] to-[#111] rounded-[3.5rem] border border-white/10 shadow-2xl flex items-center justify-center p-3">
+            <div className="w-full h-full bg-gradient-to-br from-champagne/10 via-transparent to-primary/10 rounded-[3rem] border border-white/5" />
+          </div>
+          <div className="absolute -inset-4 bg-gradient-radial from-champagne/10 to-transparent blur-2xl -z-10" />
         </div>
       </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
+          {/* Premium badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card mb-10"
           >
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground">Open Now • Kalwar Road, Jaipur</span>
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-foreground/80">Premium Mobile Destination</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-sm text-muted-foreground">Kalwar Road, Jaipur</span>
           </motion.div>
 
           {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold mb-8 leading-[1.1] tracking-tight"
           >
             <span className="gradient-text">Jaipur's Most Trusted</span>
             <br />
-            <span className="text-foreground">Mobile Store</span>
+            <span className="gradient-text-silver">Mobile Store</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -68,10 +77,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Premium iPhones & Android flagships with best prices, 
-            easy EMI options, and genuine products — all under one roof.
+            Experience premium iPhones & Android flagships with unmatched prices, 
+            flexible EMI options, and 100% genuine products.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -79,23 +88,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
             <button
               onClick={openMaps}
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 glow-effect"
+              className="group flex items-center justify-center gap-3 px-8 py-4 premium-button text-lg"
             >
               <MapPin className="w-5 h-5" />
-              Get Directions
-              <span className="text-sm opacity-70">📍</span>
+              Visit Store
             </button>
             <button
               onClick={openWhatsApp}
-              className="group flex items-center justify-center gap-3 px-8 py-4 glass-button text-foreground rounded-2xl font-semibold text-lg"
+              className="group flex items-center justify-center gap-3 px-8 py-4 glass-button text-foreground rounded-xl font-semibold text-lg"
             >
-              <MessageCircle className="w-5 h-5 text-green-500" />
+              <MessageCircle className="w-5 h-5 text-green-400" />
               WhatsApp Now
-              <span className="text-sm opacity-70">💬</span>
             </button>
           </motion.div>
 
@@ -107,16 +114,16 @@ const Hero = () => {
             className="flex flex-wrap justify-center gap-4 md:gap-6"
           >
             {[
-              { icon: Shield, text: "100% Original", color: "text-green-500" },
-              { icon: CreditCard, text: "EMI Available", color: "text-primary" },
-              { icon: Award, text: "Best Price Guarantee", color: "text-luxury-gold" },
+              { icon: Shield, text: "100% Original", color: "text-green-400" },
+              { icon: CreditCard, text: "Easy EMI", color: "text-primary" },
+              { icon: Award, text: "Best Price Guarantee", color: "text-champagne" },
             ].map((badge, index) => (
               <motion.div
                 key={badge.text}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                className="flex items-center gap-2 px-4 py-2 glass-card"
+                className="flex items-center gap-2.5 px-5 py-3 glass-card"
               >
                 <badge.icon className={`w-5 h-5 ${badge.color}`} />
                 <span className="text-sm font-medium text-foreground">{badge.text}</span>
@@ -128,12 +135,16 @@ const Hero = () => {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity }}
       >
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-muted-foreground/50 rounded-full" />
+        <div className="w-6 h-10 rounded-full border border-muted-foreground/20 flex justify-center pt-2">
+          <motion.div 
+            className="w-1 h-2 bg-primary/60 rounded-full"
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
         </div>
       </motion.div>
     </section>
